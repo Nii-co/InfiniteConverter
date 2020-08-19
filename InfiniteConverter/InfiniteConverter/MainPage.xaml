@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:InfiniteConverter"
+             mc:Ignorable="d"
+             x:Class="InfiniteConverter.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NiceConverter x:Key="myNiceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="myEntry" Text="{Binding Str,Converter= {StaticResource myNiceConverter}, Mode=TwoWay}"/>
+        <Button x:Name="myBtn" Text="Click" />
+        <!--
+        
+
+        <ListView x:Name="EmployeeView" CachingStrategy="RecycleElement">            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <EntryCell Text="{Binding DisplayName, Converter= {StaticResource myNiceConverter}, Mode=TwoWay}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    -->
+
+    </StackLayout>
+
+</ContentPage>
